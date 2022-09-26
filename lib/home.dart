@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'dart:ui';
+// import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' as rootBundle;
@@ -145,6 +145,12 @@ class _MyHomePageState extends State<MyHomePage> {
         await rootBundle.rootBundle.loadString('jsonFile/employees.json');
     final list = json.decode(jsondata) as List<dynamic>;
 
-    return list.map((e) => EmployeeDataModel.fromJson(e)).toList();
+    List<EmployeeDataModel> empList =
+        list.map((e) => EmployeeDataModel.fromJson(e)).toList();
+    empList.sort((a, b) {
+      return a.Fname.toString().compareTo(b.Fname.toString());
+    });
+
+    return empList;
   }
 }

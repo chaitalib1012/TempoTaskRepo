@@ -1,6 +1,4 @@
-
-
-class EmployeeDataModel{
+class EmployeeDataModel {
   int? id;
   String? imageUrl;
   String? Fname;
@@ -12,34 +10,30 @@ class EmployeeDataModel{
   double? Salary;
   String? address;
 
-EmployeeDataModel(
-  {
-  this.id,
-  this.imageUrl, 
-  this.Fname, 
-  this.Lname,
-  this.Email,
-  this.ContactNo,
-  this.age,
-  this.DOB,
-  this.Salary,
-  this.address
-});
+  EmployeeDataModel(
+      {this.id,
+      this.imageUrl,
+      this.Fname,
+      this.Lname,
+      this.Email,
+      this.ContactNo,
+      this.age,
+      this.DOB,
+      this.Salary,
+      this.address});
 
-EmployeeDataModel.fromJson(Map<String, dynamic> json)
-{
-  id = json['id'];
-  imageUrl= json['imageUrl'];
-  Fname= json['firstName'];
-  Lname= json['lastName'];
-  Email= json['email'];
-  ContactNo= json['contactNumber'];
-  age= json['age'];
-  DOB= json['dob'];
-  Salary= json['salary'];
-  address= json['address'];
+  EmployeeDataModel.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    imageUrl = json['imageUrl'];
+    Fname = json['firstName'];
+    Lname = json['lastName'];
+    Email = json['email'];
+    ContactNo = json['contactNumber'];
+    age = json['age'];
+    DOB = json['dob'];
+    Salary = json['salary'];
+    address = json['address'];
+  }
+
+  static void sort(Function(dynamic a, dynamic b) param0) {}
 }
-
-}
-
-
